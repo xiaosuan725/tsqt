@@ -1,4 +1,4 @@
-import React, { Children, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import { Chart } from '@antv/g2';
 import { history, useFullSidebarData } from 'dumi';
 
@@ -7,7 +7,6 @@ const getRandomNuber = (min: number, max: number) => {
 }
 
 const WordCloudChart = () => {
-
   const sidebar = useFullSidebarData();
   const list = useMemo(() => {
     const keys = Object.keys(sidebar)?.flatMap((item) => sidebar[item])?.flatMap((item) => {
@@ -20,21 +19,6 @@ const WordCloudChart = () => {
     return keys
   }, [sidebar])
   const chartRef = useRef(null);
-  const [windowSize, setWindowSize] = useState( window.innerWidth);  
-  
-  useEffect(() => {  
-    const handleResize = () => {  
-      setWindowSize(window.innerWidth);  
-    };  
-  
-    // 绑定事件监听器  
-    window.addEventListener('resize', handleResize);  
-  
-    // 在组件卸载时解绑事件监听器  
-    return () => {  
-      window.removeEventListener('resize', handleResize);  
-    };  
-  }, []);  
 
   useEffect(() => {
     if (chartRef.current) {
@@ -42,7 +26,7 @@ const WordCloudChart = () => {
       const chart = new Chart({
         container: chartRef.current,
         padding: 0,
-        width: windowSize > 980 ? 980 : windowSize
+        width: 980
       });
 
       chart
@@ -66,9 +50,9 @@ const WordCloudChart = () => {
         chart.destroy();
       };
     }
-  }, [windowSize]); // 空依赖数组意味着useEffect只在组件挂载时运行一次  
+  }, []); // 空依赖数组意味着useEffect只在组件挂载时运行一次  
 
-  return <div ref={chartRef} id="container" style={{ width: windowSize > 980 ? 980 : windowSize, margin: '0 auto' }} />;
+  return <div ref={chartRef} id="container" style={{ width: 980, margin: '0 auto' }} />;
 };
 
 export default WordCloudChart;
