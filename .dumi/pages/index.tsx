@@ -1,24 +1,24 @@
-import React, { Children, useEffect, useRef, useState } from 'react';
+import React, { Children, useEffect, useMemo, useRef, useState } from 'react';
 import { Chart } from '@antv/g2';
+import { history, useFullSidebarData } from 'dumi';
 
-const coldColors = [
-  '#003f5f', '#2f4f4f', '#607d79', '#82ca9d', '#96e6a1',
-  '#b5e6e6'
-];
-
-const data = [
-  {
-    color: '#003f5f',
-    childrens: ['八卦锻造材料汇总', '职业饰品升级所需材料', '翅膀外形', '套装图', '每周经验表', '登录奖励', '心法计算器', '人物经验表']
-  },
-  {
-    color: '#b5e6e6',
-    childrens: ['骑宠风雷丹加成', '骑宠宠物加成']
-  }
-]
+const getRandomNuber = (min: number, max: number) => {
+  return Math.random() * (max - min)
+}
 
 const WordCloudChart = () => {
-  const list = data?.flatMap((item) => item.childrens?.map((children) => ({ color: item.color, text: children })))
+
+  const sidebar = useFullSidebarData();
+  const list = useMemo(() => {
+    const keys = Object.keys(sidebar)?.flatMap((item) => sidebar[item])?.flatMap((item) => {
+      return item.children?.map((child) => ({
+        text: child.title,
+        link: child.link,
+        value: getRandomNuber(10, 15)
+      }))
+    })
+    return keys
+  }, [sidebar])
   const chartRef = useRef(null);
   const [windowSize, setWindowSize] = useState( window.innerWidth);  
   
@@ -56,9 +56,8 @@ const WordCloudChart = () => {
 
       chart.interaction('tooltip', false);
       chart.on('element:click', (evt) => {
-        const { data } = evt
-        console.log('Clicked on word:', data);
-        // 执行其他逻辑  
+        const link = evt.data.data.link
+        history.push(link)
       });
       chart.render();
 
