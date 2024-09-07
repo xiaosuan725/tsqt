@@ -53,12 +53,6 @@ const WordCloudChart = () => {
         })
         .encode('color', 'text')
         .axis(false)
-        .style('fill', (datum: any) => {
-          console.log('datum, index, data', datum)
-          if (datum?.color) {
-            return datum?.color
-          }
-        })
 
       chart.interaction('tooltip', false);
       chart.on('element:click', (evt) => {
