@@ -1,6 +1,7 @@
 ---
 group: 
   title: 材料
+order: -1
 ---
 
 # 五行宫材料

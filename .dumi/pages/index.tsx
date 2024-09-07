@@ -65,12 +65,9 @@ const MobileGuide = () => {
   const keyMap = {
     '/role': '人物',
     '/package': '封包',
-    '/guide': '攻略',
-    '/mount': '骑宠',
-    '/task': '任务',
     '/pet': '宠物'
   }
-  const keys: (keyof typeof keyMap)[] = ['/role', '/pet', '/mount', '/guide', '/task', '/package']
+  const keys: (keyof typeof keyMap)[] = ['/role', '/pet', '/package']
 
   return <Tabs
     items={keys?.map((key) => {
