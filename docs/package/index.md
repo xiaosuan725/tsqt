@@ -17,3 +17,4 @@ nav:
 [换被污染的噬灵瓶.hy](http://lc-UEJZFyx1.cn-n1.lcfile.com/nFp6CGJ02NRXdV1ycY1qwahKqIPNlTwr/%E6%8D%A2%E8%A2%AB%E6%B1%A1%E6%9F%93%E7%9A%84%E5%99%AC%E7%81%B5%E7%93%B6.hy "换被污染的噬灵瓶.hy")  
 [换老君壶.hy](http://lc-UEJZFyx1.cn-n1.lcfile.com/xiUvlifp9JGY4mmwR2rcCIF57xDvjKN4/%E6%8D%A2%E8%80%81%E5%90%9B%E5%A3%B6.hy "换老君壶.hy")  
 [帮会捐献第一格.hy](http://lc-UEJZFyx1.cn-n1.lcfile.com/oBNdVdO4EPiEhscrmORc1lXH17jrNbql/%E5%B8%AE%E4%BC%9A%E6%8D%90%E7%8C%AE%E7%AC%AC%E4%B8%80%E6%A0%BC.hy "帮会捐献第一格.hy")  
+[买五行宫.hy](http://lc-UEJZFyx1.cn-n1.lcfile.com/HL4PcF1jRv3nhacdQ4mL9FET0R0plF0D/%E4%B9%B0%E4%BA%94%E8%A1%8C%E5%AE%AB.hy "买五行宫.hy")  
